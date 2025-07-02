@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Despacho Contable Villagran | José Guadalupe Villagran Barrera</title>
     
-    <!-- Fuentes Google -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <style>
@@ -55,8 +54,9 @@
             width: 160px;
             height: 160px;
             border-radius: 50%;
-            object-fit: cover;
-            object-position: center top;
+            /* Esto ya lo tienes y es clave: */
+            object-fit: cover; /* Recorta la imagen para que quepa y cubra el contenedor */
+            object-position: center top; /* Asegura que la parte superior de la imagen sea visible */
             border: 5px solid rgba(255, 255, 255, 0.9);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
             transition: all 0.4s ease;
@@ -261,9 +261,8 @@
 </head>
 <body>
     <div class="tarjeta">
-        <!-- Contenedor de foto profesional -->
         <div class="contenedor-foto">
-            <img src="img/Foto-Perfil.jpg" alt="José Guadalupe Villagran Barrera - Contador Público" class="foto-perfil">
+            <img src="https://github.com/Jp112-max/tarjeta-presentacion/blob/a26a2fcf083c8f3a67afe1386b5383133b4e79b6/Foto-Perfil.jpg" alt="José Guadalupe Villagran Barrera - Contador Público" class="foto-perfil">
             <div class="badge">CPA</div>
         </div>
         
@@ -273,7 +272,6 @@
         
         <div class="separador"></div>
         
-        <!-- Sección de Habilidades Ampliada -->
         <div class="habilidades">
             <div class="grupo-habilidades">
                 <h3>Servicios Contables</h3>
@@ -299,7 +297,6 @@
             </div>
         </div>
         
-        <!-- Botones de Contacto Mejorados -->
         <div class="contacto">
             <a href="tel:7737324944" class="boton llamar">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
