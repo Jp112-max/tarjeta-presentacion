@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de Presentación Digital</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Tarjeta de Presentación Digital | Despacho Contable Villagran</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+        :root {
+            --primary-color: #0056b3;
+            --primary-dark: #003d82;
+            --secondary-color: #28a745;
+            --whatsapp-color: #25d366;
+            --email-color: #dc3545;
+            --text-dark: #333333;
+            --text-medium: #555555;
+            --text-light: #777777;
+            --border-color: #e0e0e0;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+        }
+        
         body {
             font-family: 'Roboto', sans-serif;
             background-color: #f0f2f5;
@@ -16,65 +31,111 @@
             margin: 0;
             padding: 20px;
             box-sizing: border-box;
+            color: var(--text-dark);
         }
 
         .tarjeta {
-            background-color: #ffffff;
+            background-color: var(--white);
             border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
-            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            padding: 40px 30px;
             text-align: center;
-            max-width: 380px;
+            max-width: 420px;
             width: 100%;
             position: relative;
             overflow: hidden;
-            border-top: 5px solid #0056b3; /* Color distintivo en la parte superior */
+            border-top: 6px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .tarjeta:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
 
         .contenedor-foto {
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
-            background-color: #e0e0e0;
-            margin: -80px auto 20px auto; /* Ajuste para superponer en el borde superior */
+            margin: -90px auto 25px auto;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            border: 4px solid #ffffff; /* Borde blanco alrededor de la foto */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+            border: 5px solid var(--white);
+            position: relative;
+            background-color: #f5f5f5;
         }
 
         .foto-perfil {
             width: 100%;
             height: 100%;
-            /* Propiedades añadidas para que la imagen se vea completa */
-            object-fit: cover; /* 'cover' recorta la imagen para llenar el espacio manteniendo la relación de aspecto */
-            object-position: center; /* Centra la imagen dentro del contenedor */
+            object-fit: cover;
+            object-position: center center;
             display: block;
         }
 
+        .logo-empresa {
+            position: absolute;
+            bottom: -10px;
+            right: -10px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--white);
+            border: 3px solid var(--white);
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-empresa img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 5px;
+            background-color: var(--white);
+        }
+
         h1 {
-            color: #333333;
+            color: var(--text-dark);
             font-size: 26px;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
         }
 
         .cargo {
-            color: #555555;
+            color: var(--primary-color);
             font-size: 18px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .empresa {
-            color: #0056b3;
-            font-size: 16px;
+            color: var(--text-dark);
+            font-size: 20px;
             font-weight: 700;
             margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            position: relative;
+            display: inline-block;
+        }
+
+        .empresa::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .separador {
             width: 80%;
-            height: 2px;
-            background-color: #e0e0e0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--border-color), transparent);
             margin: 25px auto;
         }
 
@@ -84,7 +145,7 @@
         }
 
         .grupo-habilidades {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
 
         .grupo-habilidades:last-child {
@@ -92,11 +153,20 @@
         }
 
         .grupo-habilidades h3 {
-            color: #0056b3;
+            color: var(--primary-dark);
             font-size: 17px;
-            margin-bottom: 8px;
-            border-bottom: 1px solid #e0e0e0;
+            margin-bottom: 12px;
             padding-bottom: 5px;
+            border-bottom: 1px solid var(--border-color);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+        }
+
+        .grupo-habilidades h3 i {
+            margin-right: 8px;
+            color: var(--primary-color);
+            font-size: 16px;
         }
 
         .etiquetas {
@@ -107,19 +177,26 @@
 
         .etiquetas span {
             background-color: #e6f2ff;
-            color: #0056b3;
-            padding: 7px 12px;
+            color: var(--primary-dark);
+            padding: 7px 14px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        .etiquetas span:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+            transform: translateY(-2px);
         }
 
         .contacto {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 12px;
             margin-top: 25px;
         }
 
@@ -127,56 +204,86 @@
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 12px 20px;
-            border-radius: 25px;
+            padding: 12px 22px;
+            border-radius: 30px;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 15px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
             min-width: 120px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
             gap: 8px;
+            letter-spacing: 0.5px;
         }
 
-        .boton svg {
-            margin-right: 5px; /* Ajuste del margen para el SVG */
+        .boton i {
+            font-size: 16px;
         }
 
         .llamar {
-            background-color: #28a745;
-            color: #ffffff;
+            background-color: var(--primary-color);
+            color: var(--white);
         }
 
         .llamar:hover {
-            background-color: #218838;
-            transform: translateY(-2px);
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
         }
 
         .whatsapp {
-            background-color: #25d366;
-            color: #ffffff;
+            background-color: var(--whatsapp-color);
+            color: var(--white);
         }
 
         .whatsapp:hover {
             background-color: #1da851;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
         }
 
         .email {
-            background-color: #dc3545;
-            color: #ffffff;
+            background-color: var(--email-color);
+            color: var(--white);
         }
 
         .email:hover {
             background-color: #c82333;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+        }
+
+        .creditos {
+            margin-top: 30px;
+            font-size: 11px;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        /* Efecto de marca de agua */
+        .marca-agua {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 10px;
+            color: rgba(0, 0, 0, 0.1);
+            font-weight: 700;
+            letter-spacing: 1px;
+            transform: rotate(-15deg);
+            user-select: none;
         }
 
         /* Media Queries para responsividad */
         @media (max-width: 480px) {
             .tarjeta {
-                padding: 20px;
-                margin: 15px;
+                padding: 30px 20px;
+                max-width: 340px;
+            }
+
+            .contenedor-foto {
+                width: 120px;
+                height: 120px;
+                margin: -80px auto 20px auto;
             }
 
             h1 {
@@ -188,19 +295,13 @@
             }
 
             .empresa {
-                font-size: 14px;
+                font-size: 18px;
             }
 
             .boton {
                 width: 100%;
                 padding: 10px;
-                font-size: 14px;
-            }
-
-            .contenedor-foto {
-                width: 100px;
-                height: 100px;
-                margin: -70px auto 15px auto;
+                font-size: 13px;
             }
 
             .grupo-habilidades h3 {
@@ -213,17 +314,20 @@
     <div class="tarjeta">
         <div class="contenedor-foto">
             <img src="LOGO DESP.png" alt="José Guadalupe Villagran Barrera - Contador Público" class="foto-perfil">
+            <div class="logo-empresa">
+                <img src="LOGO DESP.png" alt="Despacho Contable Villagran">
+            </div>
         </div>
         
         <h1>José Guadalupe Villagran Barrera</h1>
-        <p class="cargo">Contador Público</p>
+        <p class="cargo">Contador Público Certificado</p>
         <div class="empresa">Despacho Contable Villagran</div>
         
         <div class="separador"></div>
         
         <div class="habilidades">
             <div class="grupo-habilidades">
-                <h3>Servicios Contables</h3>
+                <h3><i class="fas fa-calculator"></i> Servicios Contables</h3>
                 <div class="etiquetas">
                     <span>Personas Físicas</span>
                     <span>Personas Morales</span>
@@ -237,40 +341,37 @@
             </div>
             
             <div class="grupo-habilidades">
-                <h3>Áreas de Especialidad</h3>
+                <h3><i class="fas fa-chart-line"></i> Áreas de Especialidad</h3>
                 <div class="etiquetas">
                     <span>Fiscal</span>
                     <span>Auditoría</span>
                     <span>Finanzas</span>
                     <span>Impuestos</span>
                     <span>Contabilidad</span>
-                    <span>Servicios Fiscales Legales Complementarios</span>
+                    <span>Asesoría Fiscal</span>
                 </div>
             </div>
         </div>
         
         <div class="contacto">
             <a href="tel:7737324944" class="boton llamar">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" width="20" height="20">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
-                Llamar
+                <i class="fas fa-phone-alt"></i> Llamar
             </a>
             
             <a href="https://wa.me/7731716357" class="boton whatsapp">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 0 00-3.48-8.413z" fill="currentColor"/>
-                </svg>
-                WhatsApp
+                <i class="fab fa-whatsapp"></i> WhatsApp
             </a>
             
             <a href="mailto:despcontvilla@hotmail.com" class="boton email">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
-                </svg>
-                Email
+                <i class="fas fa-envelope"></i> Email
             </a>
         </div>
+        
+        <div class="creditos">
+            <p>© 2023 Despacho Contable Villagran. Todos los derechos reservados.</p>
+        </div>
+        
+        <div class="marca-agua">PROFESIONAL</div>
     </div>
 </body>
 </html>
