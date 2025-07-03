@@ -38,15 +38,15 @@
             background-color: var(--white);
             border-radius: 12px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-            padding: 60px 30px 30px;
+            padding: 70px 30px 30px; /* Más padding arriba para espacio del logo */
             text-align: center;
             max-width: 420px;
             width: 100%;
             position: relative;
-            overflow: visible;
+            overflow: hidden; /* Cambiado a hidden para bordes limpios */
             border-top: 6px solid var(--primary-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 60px;
+            margin-top: 80px; /* Espacio para la foto y logo */
         }
 
         .tarjeta:hover {
@@ -77,15 +77,16 @@
 
         .logo-empresa {
             position: absolute;
-            bottom: -10px;
-            right: -10px;
-            width: 50px;
-            height: 50px;
+            bottom: -15px;
+            right: -15px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background-color: var(--white);
             border: 3px solid var(--white);
             overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            z-index: 3;
         }
 
         .logo-empresa img {
@@ -96,13 +97,18 @@
             background-color: var(--white);
         }
 
+        .encabezado {
+            position: relative;
+            z-index: 1;
+            margin-top: 20px;
+        }
+
         h1 {
             color: var(--text-dark);
             font-size: 26px;
             margin-bottom: 8px;
             font-weight: 700;
             font-family: 'Montserrat', sans-serif;
-            margin-top: 20px;
         }
 
         .cargo {
@@ -277,9 +283,9 @@
 
         @media (max-width: 480px) {
             .tarjeta {
-                padding: 50px 20px 20px;
+                padding: 60px 20px 20px;
                 max-width: 340px;
-                margin-top: 50px;
+                margin-top: 70px;
             }
 
             .contenedor-foto {
@@ -288,9 +294,15 @@
                 margin: 0 auto -50px;
             }
 
+            .logo-empresa {
+                width: 50px;
+                height: 50px;
+                bottom: -10px;
+                right: -10px;
+            }
+
             h1 {
                 font-size: 22px;
-                margin-top: 15px;
             }
 
             .cargo {
@@ -326,9 +338,11 @@
             </div>
         </div>
         
-        <h1>José Guadalupe Villagran Barrera</h1>
-        <p class="cargo">Contador Público Certificado</p>
-        <div class="empresa">Despacho Contable Villagran</div>
+        <div class="encabezado">
+            <h1>José Guadalupe Villagran Barrera</h1>
+            <p class="cargo">Contador Público Certificado</p>
+            <div class="empresa">Despacho Contable Villagran</div>
+        </div>
         
         <div class="separador"></div>
         
