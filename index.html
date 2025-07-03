@@ -3,179 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tarjeta de Presentación Digital | Despacho Contable Villagran</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Despacho Contable Villagran - Tarjeta de Presentación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #0056b3;
-            --primary-dark: #003d82;
-            --secondary-color: #28a745;
-            --whatsapp-color: #25d366;
-            --email-color: #dc3545;
-            --text-dark: #333333;
-            --text-medium: #555555;
-            --text-light: #777777;
-            --border-color: #e0e0e0;
-            --background-light: #f8f9fa;
+            --primary: #0056b3;
+            --primary-dark: #003366;
+            --secondary: #28a745;
+            --light: #f8f9fa;
+            --dark: #343a40;
+            --gray: #6c757d;
             --white: #ffffff;
         }
         
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Open Sans', sans-serif;
             background-color: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
             margin: 0;
-            padding: 40px 20px;
-            box-sizing: border-box;
-            color: var(--text-dark);
+            padding: 20px;
+            color: var(--dark);
         }
 
         .tarjeta {
             background-color: var(--white);
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-            padding: 70px 30px 30px; /* Más padding arriba para espacio del logo */
-            text-align: center;
-            max-width: 420px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
             width: 100%;
-            position: relative;
-            overflow: hidden; /* Cambiado a hidden para bordes limpios */
-            border-top: 6px solid var(--primary-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            margin-top: 80px; /* Espacio para la foto y logo */
-        }
-
-        .tarjeta:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-        }
-
-        .contenedor-foto {
-            width: 140px;
-            height: 140px;
-            border-radius: 50%;
-            margin: 0 auto -60px;
+            max-width: 400px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-            border: 5px solid var(--white);
-            position: relative;
-            background-color: #f5f5f5;
-            z-index: 2;
         }
 
-        .foto-perfil {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center center;
-            display: block;
+        .header {
+            background-color: var(--primary);
+            padding: 20px;
+            text-align: center;
+            color: var(--white);
         }
 
         .logo-empresa {
-            position: absolute;
-            bottom: -15px;
-            right: -15px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background-color: var(--white);
+            max-width: 150px;
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .perfil {
+            padding: 25px;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .foto-perfil {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
             border: 3px solid var(--white);
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
-            z-index: 3;
-        }
-
-        .logo-empresa img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 5px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            margin-top: -60px;
             background-color: var(--white);
         }
 
-        .encabezado {
-            position: relative;
-            z-index: 1;
-            margin-top: 20px;
-        }
-
-        h1 {
-            color: var(--text-dark);
-            font-size: 26px;
-            margin-bottom: 8px;
-            font-weight: 700;
+        .nombre {
             font-family: 'Montserrat', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            margin: 15px 0 5px;
+            color: var(--dark);
         }
 
         .cargo {
-            color: var(--primary-color);
-            font-size: 18px;
-            margin-bottom: 8px;
+            color: var(--primary);
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-size: 16px;
         }
 
-        .empresa {
-            color: var(--text-dark);
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 20px;
+        .seccion {
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .seccion:last-child {
+            border-bottom: none;
+        }
+
+        .titulo-seccion {
             font-family: 'Montserrat', sans-serif;
-            position: relative;
-            display: inline-block;
-        }
-
-        .empresa::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 2px;
-            background-color: var(--primary-color);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .separador {
-            width: 80%;
-            height: 1px;
-            background: linear-gradient(to right, transparent, var(--border-color), transparent);
-            margin: 25px auto;
-        }
-
-        .habilidades {
-            text-align: left;
-            margin-bottom: 25px;
-        }
-
-        .grupo-habilidades {
-            margin-bottom: 20px;
-        }
-
-        .grupo-habilidades:last-child {
-            margin-bottom: 0;
-        }
-
-        .grupo-habilidades h3 {
             color: var(--primary-dark);
-            font-size: 17px;
-            margin-bottom: 12px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid var(--border-color);
-            font-weight: 600;
+            font-size: 18px;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
         }
 
-        .grupo-habilidades h3 i {
-            margin-right: 8px;
-            color: var(--primary-color);
-            font-size: 16px;
+        .titulo-seccion i {
+            margin-right: 10px;
+            color: var(--primary);
         }
 
         .etiquetas {
@@ -184,215 +110,140 @@
             gap: 8px;
         }
 
-        .etiquetas span {
-            background-color: #e6f2ff;
+        .etiqueta {
+            background-color: var(--light);
             color: var(--primary-dark);
-            padding: 7px 14px;
+            padding: 6px 12px;
             border-radius: 20px;
             font-size: 13px;
-            font-weight: 500;
-            white-space: nowrap;
-            transition: all 0.2s ease;
-        }
-
-        .etiquetas span:hover {
-            background-color: var(--primary-color);
-            color: var(--white);
-            transform: translateY(-2px);
+            font-weight: 600;
         }
 
         .contacto {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 25px;
+            gap: 10px;
+            margin-top: 15px;
         }
 
         .boton {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            padding: 12px 22px;
-            border-radius: 30px;
+            padding: 10px 15px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             font-size: 14px;
             transition: all 0.3s ease;
-            min-width: 120px;
-            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-            gap: 8px;
-            letter-spacing: 0.5px;
         }
 
         .boton i {
-            font-size: 16px;
+            margin-right: 5px;
         }
 
         .llamar {
-            background-color: var(--primary-color);
+            background-color: var(--primary);
             color: var(--white);
         }
 
         .llamar:hover {
             background-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
         }
 
         .whatsapp {
-            background-color: var(--whatsapp-color);
+            background-color: #25D366;
             color: var(--white);
         }
 
         .whatsapp:hover {
-            background-color: #1da851;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+            background-color: #128C7E;
         }
 
         .email {
-            background-color: var(--email-color);
+            background-color: var(--gray);
             color: var(--white);
         }
 
         .email:hover {
-            background-color: #c82333;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(220, 53, 69, 0.3);
+            background-color: #5a6268;
         }
 
-        .creditos {
-            margin-top: 30px;
-            font-size: 11px;
-            color: var(--text-light);
+        .footer {
             text-align: center;
-        }
-
-        .marca-agua {
-            position: absolute;
-            bottom: 10px;
-            right: 10px;
-            font-size: 10px;
-            color: rgba(0, 0, 0, 0.1);
-            font-weight: 700;
-            letter-spacing: 1px;
-            transform: rotate(-15deg);
-            user-select: none;
+            padding: 15px;
+            font-size: 12px;
+            color: var(--gray);
+            background-color: var(--light);
         }
 
         @media (max-width: 480px) {
-            .tarjeta {
-                padding: 60px 20px 20px;
-                max-width: 340px;
-                margin-top: 70px;
+            .contacto {
+                flex-direction: column;
             }
-
-            .contenedor-foto {
-                width: 120px;
-                height: 120px;
-                margin: 0 auto -50px;
-            }
-
-            .logo-empresa {
-                width: 50px;
-                height: 50px;
-                bottom: -10px;
-                right: -10px;
-            }
-
-            h1 {
-                font-size: 22px;
-            }
-
-            .cargo {
-                font-size: 16px;
-            }
-
-            .empresa {
-                font-size: 18px;
-            }
-
-            .empresa::after {
-                bottom: -8px;
-            }
-
+            
             .boton {
-                width: 100%;
-                padding: 10px;
-                font-size: 13px;
-            }
-
-            .grupo-habilidades h3 {
-                font-size: 16px;
+                justify-content: center;
             }
         }
     </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="tarjeta">
-        <div class="contenedor-foto">
-            <img src="LOGO DESP.png" alt="José Guadalupe Villagran Barrera - Contador Público" class="foto-perfil">
-            <div class="logo-empresa">
-                <img src="LOGO DESP.png" alt="Despacho Contable Villagran">
+        <!-- Encabezado con logo de la empresa -->
+        <div class="header">
+            <img src="Logo-Desp.png" alt="Despacho Contable Villagran" class="logo-empresa">
+        </div>
+        
+        <!-- Sección de perfil -->
+        <div class="perfil">
+            <h1 class="nombre">José Guadalupe Villagran Barrera</h1>
+            <p class="cargo">Contador Público</p>
+        </div>
+        
+        <!-- Sección de servicios -->
+        <div class="seccion">
+            <h2 class="titulo-seccion"><i class="fas fa-calculator"></i> Servicios Contables</h2>
+            <div class="etiquetas">
+                <span class="etiqueta">Personas Físicas</span>
+                <span class="etiqueta">Personas Morales</span>
+                <span class="etiqueta">Arrendamiento</span>
+                <span class="etiqueta">Honorarios</span>
+                <span class="etiqueta">Nóminas</span>
+                <span class="etiqueta">Seguridad Social</span>
+                <span class="etiqueta">Estados Financieros</span>
+                <span class="etiqueta">Declaraciones</span>
             </div>
         </div>
         
-        <div class="encabezado">
-            <h1>José Guadalupe Villagran Barrera</h1>
-            <p class="cargo">Contador Público Certificado</p>
-            <div class="empresa">Despacho Contable Villagran</div>
-        </div>
-        
-        <div class="separador"></div>
-        
-        <div class="habilidades">
-            <div class="grupo-habilidades">
-                <h3><i class="fas fa-calculator"></i> Servicios Contables</h3>
-                <div class="etiquetas">
-                    <span>Personas Físicas</span>
-                    <span>Personas Morales</span>
-                    <span>Arrendamiento</span>
-                    <span>Honorarios</span>
-                    <span>Nóminas</span>
-                    <span>Seguridad Social</span>
-                    <span>Estados Financieros</span>
-                    <span>Declaraciones</span>
-                </div>
-            </div>
-            
-            <div class="grupo-habilidades">
-                <h3><i class="fas fa-chart-line"></i> Áreas de Especialidad</h3>
-                <div class="etiquetas">
-                    <span>Fiscal</span>
-                    <span>Auditoría</span>
-                    <span>Finanzas</span>
-                    <span>Impuestos</span>
-                    <span>Contabilidad</span>
-                    <span>Asesoría Fiscal</span>
-                </div>
+        <!-- Sección de especialidades -->
+        <div class="seccion">
+            <h2 class="titulo-seccion"><i class="fas fa-chart-line"></i> Áreas de Especialidad</h2>
+            <div class="etiquetas">
+                <span class="etiqueta">Fiscal</span>
+                <span class="etiqueta">Auditoría</span>
+                <span class="etiqueta">Finanzas</span>
+                <span class="etiqueta">Impuestos</span>
+                <span class="etiqueta">Contabilidad</span>
+                <span class="etiqueta">Asesoría Fiscal</span>
             </div>
         </div>
         
-        <div class="contacto">
-            <a href="tel:7737324944" class="boton llamar">
-                <i class="fas fa-phone-alt"></i> Llamar
-            </a>
-            
-            <a href="https://wa.me/7731716357" class="boton whatsapp">
-                <i class="fab fa-whatsapp"></i> WhatsApp
-            </a>
-            
-            <a href="mailto:despcontvilla@hotmail.com" class="boton email">
-                <i class="fas fa-envelope"></i> Email
-            </a>
+        <!-- Sección de contacto -->
+        <div class="seccion">
+            <h2 class="titulo-seccion"><i class="fas fa-address-card"></i> Contacto</h2>
+            <div class="contacto">
+                <a href="tel:7737324944" class="boton llamar">
+                    <i class="fas fa-phone-alt"></i> Llamar
+                </a>
+                <a href="https://wa.me/7731716357" class="boton whatsapp">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
+                </a>
+                <a href="mailto:despcontvilla@hotmail.com" class="boton email">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
         </div>
-        
-        <div class="creditos">
-            <p>© 2023 Despacho Contable Villagran. Todos los derechos reservados.</p>
-        </div>
-        
-        <div class="marca-agua">PROFESIONAL</div>
     </div>
 </body>
 </html>
