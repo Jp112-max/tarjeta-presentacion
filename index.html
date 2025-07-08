@@ -46,28 +46,24 @@
         
         .contenedor-foto {
             position: relative;
-            display: inline-block;
+            display: block;
             margin-bottom: 25px;
+            overflow: visible; /* Asegura que nada se recorte */
         }
         
         .foto-perfil {
-            width: 160px;
-            height: auto;
-            object-position: center top;
-            transition: all 0.4s ease;
-            display: block;
-            margin: 0 auto;
-        }
-        
-        .foto-perfil:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            max-width: 100%; /* La imagen no excederá su contenedor */
+            height: auto; /* Mantiene proporciones originales */
+            display: block; /* Elimina espacio adicional debajo */
+            margin: 0 auto; /* Centra la imagen */
+            /* Eliminados todos los efectos de marco: */
+            /* border-radius, border, box-shadow, object-fit */
         }
         
         .badge {
             position: absolute;
-            bottom: 10px;
-            right: 10px;
+            bottom: -10px; /* Ajustado para que no solape la imagen */
+            right: calc(50% - 25px); /* Centrado horizontalmente */
             background: #FFFFFF;
             color: var(--color-primario);
             padding: 5px 15px;
@@ -77,6 +73,7 @@
             font-family: 'Montserrat', sans-serif;
             border: 2px solid var(--color-primario);
             box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            z-index: 2; /* Asegura que esté sobre otros elementos */
         }
         
         h1 {
